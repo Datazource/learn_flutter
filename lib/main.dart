@@ -9,12 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Welcome to Flutter',
-      actions: <Widget>[
-        new IconButton(
-          icon: new Icon(Icons.list),
-          onPressed: _pushSaved,
-        ),
-      ],
       home: new RandomWords(),
     );
   }
@@ -39,6 +33,12 @@ class RandomWordsState extends State<RandomWords> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Startup name Generator'),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.list),
+            onPressed: _pushSaved,
+          ),
+        ],
       ),
       body: _buildSuggestions(),
     );
@@ -79,6 +79,12 @@ class RandomWordsState extends State<RandomWords> {
           }
         });
       },
+    );
+  }
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      
     );
   }
 
