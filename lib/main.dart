@@ -7,7 +7,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return new MaterialApp(
       title: 'Welcome to Flutter',
       home: new Scaffold(
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-    
   }
 
 }
@@ -43,7 +41,6 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-
     return new ListView.builder(
       padding: const EdgeInsets.all(16.0),
       itemBuilder: (context, i) {
@@ -55,7 +52,15 @@ class RandomWordsState extends State<RandomWords> {
         return _buildRow(_suggestions[index]);
       },
     );
-  
+  }
+
+  Widget _buildRow(WordPair pair) {
+    return new ListTile(
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+    );
   }
 
 }
