@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'counter.dart';
 
 class CounterDisplay extends StatelessWidget {
   CounterDisplay({this.count});
