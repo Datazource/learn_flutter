@@ -28,3 +28,14 @@ class _CounterState extends State<Counter> {
     );
   }
 }
+
+
+void main() {
+  runApp( new MaterialApp(
+    home: new Scaffold(
+      body: new Center(
+        child: new Counter(),
+      ),
+    )
+  ));
+}
