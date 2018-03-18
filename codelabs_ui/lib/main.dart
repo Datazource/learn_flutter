@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 
 const String _name = "Paulus";
 
@@ -93,12 +94,18 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
             ),
             new Container(
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
-              child: new IconButton(
-                icon: new Icon(Icons.send),
-                onPressed: _isComposing 
-                  ? () => _handleSubmitted(_textController.text)
-                  : null,
-              ),
+              child: Theme.of(context).platform == TargetPlatform.iOS
+                ? new CupertinoButton(
+                  child : new Text("Send"),
+                  onPressed: _isComposing
+                    ? () => _handleSubmitted(_textController.text)
+                    : null,) 
+                : new IconButton(
+                  icon: new Icon(Icons.send),
+                  onPressed: _isComposing 
+                    ? () => _handleSubmitted(_textController.text)
+                    : null,
+                ),
             ),
           ],
         ),
