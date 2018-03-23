@@ -121,23 +121,32 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         elevation: 
           Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
       ),
-      body: new Column(
-        children: <Widget>[
-          new Flexible(
-            child: new ListView.builder(
-              padding: new EdgeInsets.all(8.0),
-              reverse: true,
-              itemBuilder: (_, int index) => _messages[index],
-              itemCount: _messages.length,
+      body: new Container(
+        child: new Column(
+          children: <Widget>[
+            new Flexible(
+              child: new ListView.builder(
+                padding: new EdgeInsets.all(8.0),
+                reverse: true,
+                itemBuilder: (_, int index) => _messages[index],
+                itemCount: _messages.length,
+              ),
             ),
-          ),
-          new Divider(height: 1.0,),
-          new Container(
-            decoration: new BoxDecoration(
-              color: Theme.of(context).cardColor),
-            child: _buildTextComposer(),
-          ),
-        ],
+            new Divider(height: 1.0,),
+            new Container(
+              decoration: new BoxDecoration(
+                color: Theme.of(context).cardColor),
+              child: _buildTextComposer(),
+            ),
+          ],
+        ),
+        decoration: Theme.of(context).platform == TargetPlatform.iOS
+          ? new BoxDecoration(
+            border: new Border(
+              top: new BorderSide(color: Colors.grey[200])
+            )
+          )
+          : null
       ),
     );
   }
