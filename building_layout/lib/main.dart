@@ -4,6 +4,7 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+
     Widget tilteSection = new Container(
       padding: const EdgeInsets.all(32.0),
       child: new Row(
@@ -36,6 +37,13 @@ class MyApp extends StatelessWidget {
           ),
           new Text('41'),
         ],
+      ),
+    );
+
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue
       ),
     );
   }
