@@ -62,6 +62,17 @@ class MyApp extends StatelessWidget {
         ],
       );
     }
+    
+    Widget buttonSection = new Container(
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          buildButtonColumn(Icons.call, 'CALL'),
+          buildButtonColumn(Icons.near_me, 'ROUTE'),
+          buildButtonColumn(Icons.share, 'SHARE')
+        ],
+      ),
+    );
 
     return new MaterialApp(
       title: 'Flutter Demo',
